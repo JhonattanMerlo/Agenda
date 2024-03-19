@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tua Agenda</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <p>e-mail</p>
+    <input type="email" id="email">
+    <p>senha</p>
+    <input type="password" id="senha">
+    <button type="button" onclick="mostrarSenha()">Mostrar Senha</button>
+    <button type="submit">Entrar</button>
+
+    <script>
+        // JavaScript para alternar a visibilidade da senha
+        function mostrarSenha() {
+            var campoSenha = document.getElementById("senha");
+            if (campoSenha.type === "password") {
+                campoSenha.type = "text";
+            } else {
+                campoSenha.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
