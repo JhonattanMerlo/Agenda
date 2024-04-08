@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #togglePassword {
+        cursor: pointer;
+        user-select: none;
+    }
+</style>
+
+<body>
+    <h1>Cadastro</h1>
+    <p>Nome Completo</p>
+    <input type="text" id="nome">
+    <p>Data de nascimento</p>
+    <input type="date" id="data">
+    <p>Nome da Empresa</p>
+    <input type="text" id="empresa">
+    <p>Endereço</p>
+    <input type="text" id="endereco">
+    <p>E-mail</p>
+    <input type="email" id="email">
+    <p>Senha</p>
+    <input type="password" id="senha">
+    <span id="togglePassword" onclick="toggleSenhaVisibility()">👁</span>
+    <p>Confirmar Senha</p>
+    <input type="password" id="confirmsenha">
+    <span id="togglePassword" onclick="toggleConfirmSenhaVisibility()">👁</span>
+    <button type="submit">Entrar</button>
+    Já possui uma conta? <a href="index.html">LOGIN</a>
+
+    <script>
+        function toggleSenhaVisibility() {
+            var senhaInput = document.getElementById("senha");
+            var toggleIcon = document.getElementById("togglePassword");
+        
+            if (senhaInput.type === "password") {
+                senhaInput.type = "text";
+                toggleIcon.textContent = "👁";
+            } else {
+                senhaInput.type = "password";
+                toggleIcon.textContent = "👁";
+            }
+        }
+        function toggleConfirmSenhaVisibility() {
+            var senhaInput = document.getElementById("confirmsenha");
+            var toggleIcon = document.getElementById("togglePassword");
+        
+            if (senhaInput.type === "password") {
+                senhaInput.type = "text";
+                toggleIcon.textContent = "👁";
+            } else {
+                senhaInput.type = "password";
+                toggleIcon.textContent = "👁";
+            }
+        }
+        </script>
+        
+</body>
+</html>
