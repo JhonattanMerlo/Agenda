@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
+body {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 1cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #555555;
+    background-image: url(https://img.freepik.com/vetores-gratis/barber-shop-attributes-doodle-padrao-sem-emenda_1284-11894.jpg);
+
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+form {
+    background-color: white;
+
+    max-width: 500px;
+    height: 550px;
+    padding: 40px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: blue;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    justify-content: center;
+    text-align: center;
+    padding-top: -8cm;
+    display: flex;
+}
+
+.entrar-conta {
+        color: blue;
+        height: 20px;
+        font-weight: 700px;
+        justify-content: center;
+        align-self: center;
+}
