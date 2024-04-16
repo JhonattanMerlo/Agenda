@@ -16,7 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #555555;
-    background-image: url(https://img.freepik.com/vetores-gratis/barber-shop-attributes-doodle-padrao-sem-emenda_1284-11894.jpg);
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20220507/pngtree-barbershop-seamless-pattern-with-professional-hairdressing-tools-image_1319298.jpg);
 
 }
 
@@ -26,14 +26,14 @@ body {
 }
 
 form {
-    background-color: white;
+    background-color: rgb(155 116 111);
 
     max-width: 500px;
     height: 550px;
     padding: 40px;
     border-radius: 20px;
     border-style: solid;
-    border-color: blue;
+    border-color: black;
     align-items: center;
     justify-content: center;
 }
@@ -46,7 +46,7 @@ h1 {
 }
 
 .entrar-conta {
-        color: blue;
+        color: black;
         height: 20px;
         font-weight: 700px;
         justify-content: center;
