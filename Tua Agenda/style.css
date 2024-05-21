@@ -1,3 +1,6 @@
+.cliente-area{
+    display: ;
+}
 .popup {
     display: none;
     position: fixed;
@@ -31,3 +34,4 @@
     text-decoration: none;
     cursor: pointer;
 }
+

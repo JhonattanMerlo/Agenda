@@ -6,32 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tua Agenda</title>
 </head>
-
-
 <body>
     <h1>Login</h1>
-    <p>e-mail</p>
-    <input type="email" id="email">
-    <p>senha</p>
-    <input type="password" id="senha">
-    <span id="togglePassword" onclick="toggleSenhaVisibility()">👁</span>
-    <button id="loginButton" type="submit">Entrar</button>
+    <form id="loginForm" onsubmit="return fazerLogin()">
+        <p>e-mail</p>
+        <input type="email" id="email" required>
+        <p>senha</p>
+        <input type="password" id="senha" required>
+        <span id="togglePassword" onclick="toggleSenhaVisibility()">👁</span>
+        <input type="submit" value="Entrar">
+        <div id="errorMessage"></div>
+    </form>
     <a href="cadastro.html">Não tem cadastro?</a>
 
-
-    <script>
-        function toggleSenhaVisibility() {
-            var senhaInput = document.getElementById("senha");
-            var toggleIcon = document.getElementById("togglePassword");
-        
-            if (senhaInput.type === "password") {
-                senhaInput.type = "text";
-                toggleIcon.textContent = "👁";
-            } else {
-                senhaInput.type = "password";
-                toggleIcon.textContent = "👁";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
+    <script src="cliente.js"></script>
 </body>
 </html>

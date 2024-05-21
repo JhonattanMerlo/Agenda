@@ -1,83 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro.css">
-    <title>Document</title>
+    <title>Cadastro</title>
+    <style>
+        .togglePassword {
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
 </head>
-<style>
-    #togglePassword {
-        cursor: pointer;
-        user-select: none;
-    }
-</style>
-
 <body>
-    <section class="form-container">
-        <div class="container">
-            <form action="">
-            <h1>Cadastro</h1>
-            <div class="nome-form">    
-            <p>Nome Completo</p>
-            <input type="text" id="nome">
-            </div>        
-            <p>Data de nascimento</p>
-            <input type="date" id="data">
+    <h1>Cadastro</h1>
+    <form id="registrationForm">
+        <p>Nome Completo</p>
+        <input type="text" id="nome" required>
+        <p>Data de nascimento</p>
+        <input type="date" id="data" required>
+        <p>Nome da Empresa</p>
+        <input type="text" id="empresa" required>
+        <p>Endereço</p>
+        <input type="text" id="endereco" required>
+        <p>E-mail</p>
+        <input type="email" id="email" required>
+        <p>Senha</p>
+        <input type="password" id="senha" required>
+        <span class="togglePassword" onclick="toggleSenhaVisibility('senha')">👁</span>
+        <p>Confirmar Senha</p>
+        <input type="password" id="confirmsenha" required>
+        <span class="togglePassword" onclick="toggleSenhaVisibility('confirmsenha')">👁</span>
+        <br><br>
+        <button type="submit">Registrar</button>
+    </form>
+    Já possui uma conta? <a href="index.html">LOGIN</a>
 
-            <p>Nome da Empresa</p>
-            <input type="text" id="empresa">
-
-            <p>Endereço</p>
-            <input type="text" id="endereco">
-
-            <p>E-mail</p>
-            <input type="email" id="email">
-
-            <p>Senha</p>
-            <input type="password" id="senha">
-            <span id="togglePassword" onclick="toggleSenhaVisibility()">👁</span>
-
-            <p>Confirmar Senha</p>
-            <input type="password" id="confirmsenha">
-            <span id="togglePassword" onclick="toggleConfirmSenhaVisibility()">👁</span>
-
-            <button type="submit">Entrar</button>
-            
-        <script>
-            function toggleSenhaVisibility() {
-            var senhaInput = document.getElementById("senha");
-            var toggleIcon = document.getElementById("togglePassword");
-        
-            if (senhaInput.type === "password") {
-                senhaInput.type = "text";
-                toggleIcon.textContent = "👁";
-            } else {
-                senhaInput.type = "password";
-                toggleIcon.textContent = "👁";
-            }
-        }
-        function toggleConfirmSenhaVisibility() {
-            var senhaInput = document.getElementById("confirmsenha");
-            var toggleIcon = document.getElementById("togglePassword");
-        
-            if (senhaInput.type === "password") {
-                senhaInput.type = "text";
-                toggleIcon.textContent = "👁";
-            } else {
-                senhaInput.type = "password";
-                toggleIcon.textContent = "👁";
-            }
-        }
-        </script>
-        </form>
-        </div>
-        </section>
-        <div class="entrar-conta">    
-            <b>
-            Já possui uma conta? <a href="index.html">LOGIN</a>
-            </b>
-        </div>
+    <script src="script.js"></script>
+    <script src="cliente.js"></script>
 </body>
 </html>

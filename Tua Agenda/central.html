@@ -17,23 +17,32 @@
         padding: 10px;
     }
 </style>
+<nav>
+    <h1>Tua Agenda</h1>
+    <a href="index.html">Sair</a>
+</nav>
 <body>
-    <table>
+    <table class="cliente-area">
         <tr>
-            <th>data</th>
-            <th>nome</th>
-            <th>tipo de serviço</th>
+            <th>Data</th>
+            <th>Nome</th>
+            <th>Tipo de serviço</th>
             <th>Valor</th>
             <th></th>
         </tr>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th><button id="abrirPopup">Remover</button></th>
+        <div class="tabela">
+        <tr class="models" style="display: none;">
+            <th class="datacorte"></th>
+            <th class="nomecliente"></th>
+            <th class="tiposerv"></th>
+            <th class="preco"></th>
+            <th><button class="abrirPopup">Remover</button></th>
         </tr>
-    </table>
+        </div>
+        </table>
+        
+        
+    
 
     <div class="popup" id="popup">
         <div class="popup-conteudo">
@@ -43,7 +52,8 @@
             <button>Enviar</button>
         </div>
     </div>
-
+    <script src="cliente.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
