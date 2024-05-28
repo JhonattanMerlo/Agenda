@@ -17,11 +17,20 @@
         padding: 10px;
     }
 </style>
-<nav>
-    <h1>Tua Agenda</h1>
-    <a href="index.html">Sair</a>
-</nav>
 <body>
+    <header>
+        <div id="title">
+            <h1>Agenda</h1>
+        </div>
+        <ul>
+            <a href="./landing_page.html"><li>Inicio</li></a>
+            <a href="./central.html"><li>Agendamento</li></a>
+            <a href="#"><li>DashBoard</li></a>
+            <a href="#"><li>Financeiro</li></a>
+            <a href="#"><li>Suporte</li></a>
+            <a href="index.html"><li>Sair</li></a>
+        </ul>
+    </header>
     <table class="cliente-area">
         <tr>
             <th>Data</th>
@@ -35,21 +44,18 @@
             <th class="datacorte"></th>
             <th class="nomecliente"></th>
             <th class="tiposerv"></th>
-            <th class="preco"></th>
+            <th class="preco">R$ </th>
             <th><button class="abrirPopup">Remover</button></th>
         </tr>
         </div>
         </table>
         
-        
-    
-
     <div class="popup" id="popup">
         <div class="popup-conteudo">
             <span class="fecharPopup" id="fecharPopup">&times;</span>
             <h2>Nos conte o Motivo do Cancelamento</h2>
-            <input type="text">
-            <button>Enviar</button>
+            <input type="text" required>
+            <button id="EnviarCancel">Enviar</button>
         </div>
     </div>
     <script src="cliente.js"></script>

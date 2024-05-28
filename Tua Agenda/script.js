@@ -12,28 +12,52 @@ function toggleSenhaVisibility() {
     }
 }
 
-//Central de agendamento
-// Obtendo os elementos
-var popup = document.getElementById("popup");
-var abrirPopup = document.getElementById("abrirPopup");
-var fecharPopup = document.getElementById("fecharPopup");
+document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.getElementById('popup');
+    const fecharPopup = document.getElementById('fecharPopup');
+    const enviarCancel = document.getElementById('EnviarCancel');
+    const motivoInput = popup.querySelector('input[type="text"]');
+    let linhaParaRemover = null;
 
-// Abrir a janela pop-up quando o botão é clicado
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('abrirPopup')) {
-        popup.style.display = "block";
+    // Função para abrir o popup
+    function abrirPopup(linha) {
+        linhaParaRemover = linha;
+        popup.style.display = 'block';
     }
+
+    // Fechar popup quando clicar no botão de fechar
+    fecharPopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    // Fechar popup quando clicar fora do conteúdo do popup
+    window.addEventListener('click', (event) => {
+        if (event.target == popup) {
+            popup.style.display = 'none';
+        }
+    });
+
+    // Remover linha da tabela quando clicar no botão "Enviar" no popup, se o campo de texto estiver preenchido
+    enviarCancel.addEventListener('click', () => {
+        if (motivoInput.value.trim() === '') {
+            alert('Por favor, insira um motivo para o cancelamento.');
+        } else {
+            if (linhaParaRemover) {
+                linhaParaRemover.remove();
+                popup.style.display = 'none';
+                motivoInput.value = ''; // Limpar o campo de texto após a remoção
+            }
+        }
+    });
+
+    // Adiciona evento ao botão "Remover" para abrir o popup
+    document.querySelectorAll('.abrirPopup').forEach(botao => {
+        botao.addEventListener('click', function() {
+            const linha = this.closest('tr');
+            abrirPopup(linha);
+        });
+    });
 });
-
-fecharPopup.onclick = function() {
-    popup.style.display = "none";
-};
-
-window.onclick = function(event) {
-    if (event.target == popup) {
-        popup.style.display = "none";
-    }
-};
 
 
 
@@ -47,7 +71,7 @@ function fazerLogin() {
 
     // Verificação de email e senha
     if (email === 'admin@agenda.com' && senha === '123456') {
-        window.location.href = 'central.html';
+        window.location.href = 'landing_page.html';
         return false; 
     } 
     else {
@@ -68,6 +92,6 @@ clienteJson.map((item, index) => {
     clienteItem.querySelector('.datacorte').innerHTML = item.date
     clienteItem.querySelector('.nomecliente').innerHTML = item.name
     clienteItem.querySelector('.tiposerv').innerHTML = item.typeservice
-    clienteItem.querySelector('.preco').innerHTML = item.price
+    clienteItem.querySelector('.preco').innerHTML = `R$ ${item.price.toFixed(2)}`
 
 });
